@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="RajRoute Tours & Travels Jaipur - Car, Hotel, Restaurant and Tour Package Booking">
+<title>RajRoute Tours & Travels | Jaipur</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f7f8fb;color:#17212b}
+header{background:#092d43;color:#fff;padding:14px 6%;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10}
+.logo{font-weight:800;font-size:22px}.logo span{color:#ff9d2e}.nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:14px}
+.hero{padding:78px 6%;background:linear-gradient(120deg,#092d43,#0b6078);color:#fff}
+.hero h1{font-size:44px;max-width:720px;margin:0 0 12px}.hero p{font-size:19px;max-width:700px;line-height:1.5}
+.btn{display:inline-block;background:#ff8f1f;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;border:0;cursor:pointer}
+.call{background:#1b9a59;margin-left:8px}
+.container{max-width:1150px;margin:auto;padding:36px 20px}.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card,.booking{background:#fff;border-radius:15px;padding:22px;box-shadow:0 5px 20px #00000012}.icon{font-size:40px}
+.formgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+label{font-weight:700;font-size:14px}input,select,textarea{width:100%;padding:12px;margin-top:6px;border:1px solid #d9dfe5;border-radius:8px}textarea{min-height:90px}
+.price{font-size:21px;font-weight:800;color:#0b6078}.small{font-size:13px;color:#667}
+footer{background:#092d43;color:#fff;padding:30px 6%;margin-top:25px}
+@media(max-width:700px){.nav{display:none}.hero h1{font-size:34px}}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">✈ <span>RajRoute</span> Tours & Travels</div>
+<div class="nav"><a href="#cars">Cars</a><a href="#hotels">Hotels</a><a href="#restaurants">Restaurants</a><a href="#packages">Packages</a><a href="#contact">Contact</a></div>
+</header>
+
+<section class="hero">
+<h1>Jaipur से आपकी पूरी यात्रा, एक ही जगह</h1>
+<p>Car • Hotel • Restaurant • Tour Packages — अपनी जरूरत बताइए, हम आपकी booking में मदद करेंगे.</p>
+<a class="btn" href="#booking">Book Now</a>
+<a class="btn call" href="tel:+919509552610">📞 Call Now</a>
+</section>
+
+<section class="container">
+<h2>हमारी मुख्य Services</h2>
+<div class="cards">
+<div class="card"><div class="icon">🚕</div><h3>Car & Taxi Booking</h3><p>Sedan, SUV, Innova, Tempo Traveller और group vehicles.</p><a class="btn" href="#cars">Book Car</a></div>
+<div class="card"><div class="icon">🏨</div><h3>Hotel Booking</h3><p>Jaipur और दूसरे destinations के लिए hotel enquiry.</p><a class="btn" href="#hotels">Book Hotel</a></div>
+<div class="card"><div class="icon">🍽️</div><h3>Restaurant Booking</h3><p>Restaurant और table booking enquiry.</p><a class="btn" href="#restaurants">Book Table</a></div>
+<div class="card"><div class="icon">🌍</div><h3>Tour Packages</h3><p>Jaipur, Agra, Delhi और Rajasthan tours.</p><a class="btn" href="#packages">View Tours</a></div>
+</div>
+</section>
+
+<section class="container" id="cars">
+<h2>🚕 Car / Taxi Booking</h2>
+<div class="booking"><div class="formgrid">
+<div><label>Pickup</label><input id="pickup" placeholder="Jaipur"></div>
+<div><label>Drop</label><input id="drop" placeholder="Agra / Delhi"></div>
+<div><label>Date</label><input id="carDate" type="date"></div>
+<div><label>Vehicle</label><select id="vehicle"><option>Sedan</option><option>SUV</option><option>Innova</option><option>Tempo Traveller</option><option>Bus</option></select></div>
+<div><label>कितनी गाड़ियाँ?</label><input id="qty" type="number" min="1" value="1"></div>
+<div><label>Passengers</label><input id="passengers" type="number" min="1" value="2"></div>
+</div><br><button class="btn" onclick="carBook()">WhatsApp Booking</button> <a class="btn call" href="tel:+919509552610">Call for Quote</a></div>
+</section>
+
+<section class="container" id="hotels">
+<h2>🏨 Hotel Booking</h2>
+<div class="booking"><div class="formgrid">
+<div><label>City</label><input id="hotelCity" placeholder="Jaipur"></div>
+<div><label>Check-in</label><input id="checkin" type="date"></div>
+<div><label>Check-out</label><input id="checkout" type="date"></div>
+<div><label>Rooms</label><input id="rooms" type="number" min="1" value="1"></div>
+<div><label>Guests</label><input id="guests" type="number" min="1" value="2"></div>
+</div><br><button class="btn" onclick="hotelBook()">Hotel Enquiry on WhatsApp</button></div>
+</section>
+
+<section class="container" id="restaurants">
+<h2>🍽️ Restaurant Booking</h2>
+<div class="booking"><div class="formgrid">
+<div><label>City</label><input id="restCity" placeholder="Jaipur"></div>
+<div><label>Restaurant</label><input id="restaurant" placeholder="Restaurant name"></div>
+<div><label>Date</label><input id="restDate" type="date"></div>
+<div><label>Time</label><input id="restTime" type="time"></div>
+<div><label>People</label><input id="people" type="number" min="1" value="2"></div>
+</div><br><button class="btn" onclick="restaurantBook()">Table Booking on WhatsApp</button></div>
+</section>
+
+<section class="container" id="packages">
+<h2>🌍 Popular Packages</h2>
+<div class="cards">
+<div class="card"><h3>Jaipur Sightseeing</h3><p>Amber Fort • City Palace • Hawa Mahal • Local Sightseeing</p><div class="price">₹2,999 से</div><br><button class="btn" onclick="pkg('Jaipur Sightseeing')">Enquire</button></div>
+<div class="card"><h3>Agra Day Tour</h3><p>Taj Mahal • Agra Fort • Local sightseeing</p><div class="price">₹3,499 से</div><br><button class="btn" onclick="pkg('Agra Day Tour')">Enquire</button></div>
+<div class="card"><h3>Rajasthan Tour</h3><p>Jaipur • Jodhpur • Udaipur • Jaisalmer</p><div class="price">₹9,999 से</div><br><button class="btn" onclick="pkg('Rajasthan Tour')">Enquire</button></div>
+</div>
+<p class="small">*Prices indicative हैं; final price date, vehicle, hotel और requirements के अनुसार confirm होगा.</p>
+</section>
+
+<section class="container" id="booking">
+<h2>📲 Quick Booking</h2>
+<div class="booking"><div class="formgrid">
+<div><label>Name</label><input id="name" placeholder="आपका नाम"></div>
+<div><label>Mobile</label><input id="mobile" placeholder="10 digit mobile number"></div>
+<div><label>Service</label><select id="service"><option>Car / Taxi</option><option>Hotel</option><option>Restaurant</option><option>Tour Package</option></select></div>
+</div><br><label>Requirement</label><textarea id="message" placeholder="अपनी यात्रा/booking की पूरी requirement लिखें"></textarea><br>
+<button class="btn" onclick="quick()">Send Booking Request</button> <a class="btn call" href="tel:+919509552610">📞 Call 9509552610</a></div>
+</section>
+
+<section class="container" id="contact">
+<h2>📍 RajRoute Tours & Travels</h2>
+<div class="booking"><p><b>Location:</b> Jaipur, Rajasthan</p><p><b>Phone:</b> <a href="tel:+919509552610">9509552610</a></p><p><b>WhatsApp:</b> <a href="https://wa.me/919509552610" target="_blank">Chat on WhatsApp</a></p><a class="btn call" href="tel:+919509552610">Call Now</a></div>
+</section>
+
+<footer><h3>✈ RajRoute Tours & Travels</h3><p>Jaipur, Rajasthan | Car • Hotel • Restaurant • Tour Packages</p><p>📞 9509552610</p></footer>
+
+<script>
+const WA="919509552610";
+function send(t){window.open("https://wa.me/"+WA+"?text="+encodeURIComponent(t),"_blank")}
+function carBook(){send(`RajRoute Car Booking\nPickup: ${pickup.value}\nDrop: ${drop.value}\nDate: ${carDate.value}\nVehicle: ${vehicle.value}\nNo. of Cars: ${qty.value}\nPassengers: ${passengers.value}`)}
+function hotelBook(){send(`RajRoute Hotel Booking\nCity: ${hotelCity.value}\nCheck-in: ${checkin.value}\nCheck-out: ${checkout.value}\nRooms: ${rooms.value}\nGuests: ${guests.value}`)}
+function restaurantBook(){send(`RajRoute Restaurant Booking\nCity: ${restCity.value}\nRestaurant: ${restaurant.value}\nDate: ${restDate.value}\nTime: ${restTime.value}\nPeople: ${people.value}`)}
+function pkg(p){send("RajRoute Tour Package Enquiry\nPackage: "+p)}
+function quick(){send(`RajRoute Quick Booking\nName: ${name.value}\nMobile: ${mobile.value}\nService: ${service.value}\nRequirement: ${message.value}`)}
+</script>
+</body>
+</html>
