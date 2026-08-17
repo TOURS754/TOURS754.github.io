@@ -97,6 +97,9 @@ footer{background:#092d43;color:#fff;padding:30px 6%;margin-top:25px}
 <div><label>Service</label><select id="service"><option>Car / Taxi</option><option>Hotel</option><option>Restaurant</option><option>Tour Package</option></select></div>
 </div><br><label>Requirement</label><textarea id="message" placeholder="अपनी यात्रा/booking की पूरी requirement लिखें"></textarea><br>
 <button class="btn" onclick="quick()">Send Booking Request</button> <a class="btn call" href="tel:+919509552610">📞 Call 9509552610</a></div>
+<br><br>
+<button class="btn" onclick="payNow()">💳 Pay Now with UPI</button>
+  
 </section>
 
 <section class="container" id="contact">
@@ -114,6 +117,23 @@ function hotelBook(){send(`RajRoute Hotel Booking\nCity: ${hotelCity.value}\nChe
 function restaurantBook(){send(`RajRoute Restaurant Booking\nCity: ${restCity.value}\nRestaurant: ${restaurant.value}\nDate: ${restDate.value}\nTime: ${restTime.value}\nPeople: ${people.value}`)}
 function pkg(p){send("RajRoute Tour Package Enquiry\nPackage: "+p)}
 function quick(){send(`RajRoute Quick Booking\nName: ${name.value}\nMobile: ${mobile.value}\nService: ${service.value}\nRequirement: ${message.value}`)}
+function payNow(){
+  const amount = prompt("Payment amount (₹) enter करें:");
+
+  if (!amount || isNaN(amount) || Number(amount) <= 0) {
+    alert("कृपया सही amount डालें।");
+    return;
+  }
+
+  const upiUrl =
+    "upi://pay" +
+    "?pa=950955261@Ybl" +
+    "&pn=RajRoute%20Tours%20%26%20Travels" +
+    "&am=" + encodeURIComponent(Number(amount).toFixed(2)) +
+    "&cu=INR";
+
+  window.location.href = upiUrl;
+}
 </script>
 </body>
 </html>
